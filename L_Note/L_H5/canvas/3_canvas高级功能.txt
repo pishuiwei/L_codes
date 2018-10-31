@@ -1,0 +1,91 @@
+﻿(1) 保存绘图状态
+    save()；
+	
+(2) 恢复绘图状态
+    restore()；
+	
+(3) 平移绘图
+    translate(x,y);
+	
+(4) 缩放
+	scale(x,y);
+	
+(5) 旋转
+    rotate(Math.PI/4);
+	
+(6) 变形矩阵
+    transform(a,b,c,d,e,f);ad缩放,bc旋转,ef平移
+	
+(7) 单位矩阵
+    setTransfrom(1,0,0,1,0,0); //重置原始状态
+
+(8) 透明度
+    globalAlpha = 0.5 ;
+	
+(9) 合成操作
+    globalCompositeOperation = "source-over"; //绘制的图形(源)画在现有画布(目标)上
+							   "destiation-over" //在以前的图形之下
+							   "source-atop" //绘制的图在以前的里面,超过的不显示
+							   "destiation-atop" //
+							   "source-in"//
+							   "destiation-in"//
+							   "source-out"
+							   "destiation-out"//
+							   "lighter" //
+							   "copy" //
+							   "xor" //
+						
+(10)阴影
+    shadowBlur = 20; //阴影大小
+	shadowOffsetX = 10; //水平偏移
+	shadowOffsetY = 10; //垂直偏移
+	shadowColor = "rgb(0,0,0)";
+							   
+(11)渐变
+	var canvas = $(".myCanvas");
+	var context = canvas.get(0).getContext("2d");
+		
+	var gradient = context.createLinearGradient(0,0,0,canvas.height()); //渐变几点(x,y),渐变中点(x,y);
+	gradient.addColorStop(0,"rgb(0,0,0)");
+	gradient.addColorStop(1,"rgb(255,255,255)");
+		
+	context.fillStyle = gradient;
+	context.fillRect(0,0,canvas.width(),canvas.height() );
+	
+	//var gradient = context.createRadialGradient(x0,y0,r0,x1,y1,r1); //开始圆或结束圆
+	
+(12)贝塞尔曲线
+	1、两次贝塞尔曲线
+		quadraticCurveTo(x0,y0,x1,y1); 
+	2、三次贝塞尔曲线
+		bezierCurveTo(x0,y0,x1,y1,x2,y2)
+		
+(13)将画布导出为图像
+    var dataURL = canvas.get(0).toDataURL();//在代码的结束点写
+	
+	步骤:
+		$(function(){
+			var canvas = $(".myCanvas");
+			var context = canvas.get(0).getContext("2d");
+		
+			context.lineWidth = 1;
+			context.beginPath();
+			context.moveTo(50,250);
+			context.bezierCurveTo(150,50,350,450,450,250);
+			context.stroke();
+			var dataURL = canvas.get(0).toDataURL();//在代码的结束点写
+		
+			var img = $("<img></img>");
+			img.attr("src",dataURL);
+			canvas.replaceWith(img);			
+		})
+	
+		
+
+	
+    
+	
+	
+    
+
+

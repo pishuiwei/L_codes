@@ -1,0 +1,98 @@
+1、jQuery中的事件
+	(1)
+		load(fn) 页面加载执行
+		bind(type[,data],fun) 为元素绑定事件
+		hover(fn1,fn2) 当光标悬停到元素上时,触发fn1,当光标移除时触发fn2
+		toggle(fn1,fn2,...fnN) 第一次单机执行fn1,第二次单击执行fn2...,执行完后循环
+	(2)事件冒泡
+		stopPropagation() 停止事件冒泡
+		preventDefault() 阻止默认行为
+		这两个方法可以写为  return false;
+	(3)事件对象的属性(event为function(event)中的参数)
+		event.type 获取事件的类型
+		event.target 获取触发事件的元素
+		event.pageX/Y 获取到贯标相对于页面的x坐标或y坐标
+		event.which() 在鼠标事件是获取鼠标的左、中、右;在键盘事件中获取键盘的按键
+			1 = 鼠标左键,2 = 鼠标中键, 3 = 鼠标右键
+		event.metaKey() 为键盘事件获取<ctrl>按键
+		event.originalEvent() 指向原始的事件对象
+	(4)移除事件
+		unbind([type][,data]) 移除指定元素的指定事件
+		one(type[,data],fn) 与bind()方法相识,不过one()执行移除后会删除事件
+	(5)模拟操作
+		trigger(type[,data]) 触发自定义事件(满足条件时触发指定事件)
+	(6)常用事件
+		focus() 获取焦点事件
+		blur() 失去焦点事件
+		dblclick() 双击事件
+		keyup(function) 按钮事件
+2、jQuery中的动画
+	(1)基础动画
+		show([1000]) 显示元素[1秒内慢慢显示出来]
+		hide([1000]) 隐藏元素[1秒内慢慢隐藏起来]
+		fadeIn([1000])  显示元素，只改变透明度
+		fadeOut([1000]) 隐藏元素，只改变透明度
+		slideDown([1000]) 由上到下,显示
+		slideUp([1000]) 由下到上，隐藏
+  	(2)自定义动画
+    animate(params,speed,callback)
+    	params: 一个包含样式属性及值的映射
+    	speed: 速度参数，可选
+    	callback: 在动画完成时执行的函数，可选
+	 简单动画 
+    	animate({"left":"500xp"},1000*3);
+	 累加、累减动画
+     	animate({"left":"+=500xp"},1000*3);
+ 	 多重动画
+   	 	 animate({"left":"500xp","top":"500px"},1000*3);
+	 顺序执行
+   	 	animate({"left":"500xp"},1000*3);
+   	 	animate({"top":"500xp"},1000*3);
+	 综合动画
+  		  $(this).animate({"left":"400px","height":"200px","opacity":"1"},1000*3)
+	  		 .animate({"top":"200px","width":"200px"},1000*3)
+	  		 .fadeOut(1000*3); 
+	(3)动画进阶
+		 动画回调函数
+    		animate({"top":"200px","width":"200px"},1000*3,function(){
+			 $(this).css("border","5px solid blue");
+   			 })
+		 停止动画  
+ 		   	 stop([clearQueue][,gotoEnd])
+        	 clearQueue,可选，为Boolean值(true或false)，是否清空没有执行的动画
+        	 gotoEnd，可选，是否直接将正在执行的动画跳转到末状态
+		 判断是否处于动画状态
+   			 if(!$(element).is(":animated")){ //判断元素是否处于动画状态
+			//如歌没有进行动画,则添加新动画
+  		  }
+		 控制速度的参数
+   			 毫秒 （比如 1500）
+   			slow 慢
+    		normal 正常
+    		fast 快
+	(4)其他动画
+		toggle() 如果元素可见则隐藏,隐藏则切换为显示
+		slideToggle() 通过高度切换匹配元素的可见性
+		fadeTo() 通过可见度切换元素的可见性
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

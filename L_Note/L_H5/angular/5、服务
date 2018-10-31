@@ -1,0 +1,91 @@
+服务:
+	$injector	// 依赖注入 get() invoke(fn) 
+	$log 		// 日志
+	$window		// window
+	$document 	// document
+	$timeout 	// 代表setTimeout在指定时间后执行；cancel方法用于清楚定时器
+	$interval 	// 代表setInterval一指定时间为周期，循环执行；cancel
+	$location   // location
+	$rootScope	// 根作用域
+	$element	// 当前元素
+	$attrs		// 当前元素的属性对象
+	
+	$http		// 请求服务端
+		$http({method:'', url:''}).then(fns, fne);
+		$http.get('/someUrl', config).then(successCallback, errorCallback);
+		$http.post('/someUrl', data, config).then(successCallback, errorCallback);
+		$http.head
+		$http.put
+		$http.delete
+		$http.jsonp
+		$http.patch
+		
+	自定义服务：所有的服务都是单列的
+		factory(name, fn(){return obj;}):	// 是一个函数用于返回值，通常我们使用factory函数来计算或返回值
+		service:(name, fn)		//	
+		constan("name", obj) 	// 返回一个obj的json对象, 全局只会有一个此对象，修改其中的一个其他引用的地方都会被改变
+		value("name", obj)   	// 和constan的主要区别在于，constan存放固定内容，value存放可能被修改的内容
+		provider:				// 是三个自定义服务中，唯一可以进行config配置阶段的一种，如果服务必须在配置阶段执行，那么必须使用provider
+			// 使用 provider 创建 service 定义一个方法用于计算两数乘积
+			app.config(function($provide) {
+			   $provide.provider('MathService', function() {
+			      this.$get = function() {
+			         var factory = {};  
+			         
+			         factory.multiply = function(a, b) {
+			            return a * b; 
+			         }
+			         return factory;
+			      };
+			   });
+			});
+			
+	装饰：为服务添加额外的行为，$delegate代表被装饰服务的实例
+		app.config(function($provide){
+		    $provide.decorator('name',function($delegate){  
+		        $delegate.money = '100w';   
+		        return $delegate
+		    })
+		});
+		
+		
+other:
+	$compile("<div>{{name}}</div>")($scope); // 主动编辑
+	
+	$templateRequest(url,[boole]) 
+ 	$templateCache.get("模板名")
+	
+	$cookieStore
+	$cookies	1.4版本开始支持
+	
+	$cacheFactory 缓存
+	
+	$filter 	过滤器
+		
+	$**Provider
+	
+	
+	// 用于在异步请求中，起到同步数据的作用
+	$q	
+	
+	var deferred = $q.defer(); 	// 延期
+	deferred.resolve(data)		// 已经解决
+	deferred.reject(data)		// 拒绝			
+	deferred.notify(data)		// 通知			
+	deferred.promise 			// 承诺
+		promise.then(successCb. errCb, notifyCb);
+		promise.catch
+		promise.finall
+	
+	$q.when(data)				// 
+	
+	$q.all(deferred1, deferred12...)	
+	$q.reject()
+	$q.resolve
+	
+	
+	
+	
+	
+		
+		

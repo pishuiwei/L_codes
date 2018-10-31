@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+</head>
+<style type="text/css">
+	.div{
+		width: 40px;
+		height: 40px;
+		background: black;
+		margin: 20px;
+	}
+	.div div {
+		width: 20px;
+		height: 20px;
+		background: purple;
+		margin: 5px;	
+	}
+	.div div div{
+		width: 10px;
+		height: 10px;
+		background: orange;
+		font-size: 
+	}
+	.a{
+		width: 40px;
+		height: 40px;
+		background: black;
+		margin: 20px;		
+	}
+	
+	.b{
+		width: 40px;
+		height: 40px;
+		background: black;
+		margin: 20px;		
+	}	
+</style>
+<body>
+	<div class="div"></div>
+	
+	<div style="background-color: blue; width: 400px; height: 300px;" class="d">
+		<div class="div">
+			<div>
+				<div class="c"></div>
+			</div>
+		</div>
+		
+		<div class="a" style="color: red;"><a>Hello World!</a></div>
+		
+		<div class="b"></div>
+	</div>
+	
+	<h1 id="hello">Hello World</h1>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$(".b").siblings().css("background","red");
+		$(".b").css("background","red")
+	});
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

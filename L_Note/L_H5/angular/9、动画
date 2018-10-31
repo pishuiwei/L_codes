@@ -1,0 +1,19 @@
+angular动画:
+	AngularJS 使用动画需要引入 angular-animate.min.js 库。		
+	var app = angular.module('myApp', ['ngAnimate']);
+	
+	ng-show
+	ng-hide
+	ng-class
+	ng-view
+	ng-include
+	ng-repeat
+	ng-if
+	ng-switch
+	
+	ng-animate
+	ng-hide-animate
+	ng-hide-add (如果元素将被隐藏)
+	ng-hide-remove (如果元素将显示)
+	ng-hide-add-active (如果元素将隐藏)
+	ng-hide-remove-active (如果元素将显示)

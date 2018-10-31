@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Canvas</title>
+<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+<style type="text/css">
+#canvas {
+	background-color: green;
+}
+</style>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="400">Hello World</canvas>
+</body>
+<script type="text/javascript">
+	var canvas = $("#canvas");
+	var context = canvas.get(0).getContext("2d");
+	context.lineJoin = 'round';
+	context.lineWidth = 30;
+	
+	context..font = '24px Helvetica';
+	context.fillText('Click anywhere to erase',175,40);
+	
+	context.strokeRect(75,100,200,200);
+	context.fillRect(325,100,200,200);
+	context.canvas.onmousedown = function(e){
+		context.clearRect(0,0,canvas.width,cancas.height);
+	};
+	
+	
+	
+	
+	
+	context.fillRect(40,40,100,100);
+
+</script>
+</html>

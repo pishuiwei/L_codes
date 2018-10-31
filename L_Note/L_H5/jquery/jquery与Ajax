@@ -1,0 +1,44 @@
+1、JQuery中的Ajax
+	load(url[,data][,fn1]) 通常用来从web服务器上获取静态的数据文件
+	$.get(url[,data][,fn1([data][,start])][,type]) 通常用来传递一些参数给服务器中的页面(后台java代码中),get方法
+	$.post(url[,data][,fn1][,type]) 通常用来传递一些参数给服务器中的页面(后台java代码中),post方法
+	$.getScript() 用于加载javaScript文件
+	$.getJSON() 用与加载JSON文件
+	$.each() 遍历数组或者集合以及对象
+
+2、$.ajax()方法
+ 	$.ajax({
+		url:发送请求的地址
+		tyep:请求的方法post和get
+		timeout:设置请求超时的时间(毫秒)
+		data:发送到服务器端的数据
+		dataType:服务器返回的数据类型
+		beforeSend:发送请求前调用的函数(函数的参数，XMLHttpRequest)
+		complete:请求完成后调用的函数(失败成功都调用)(XMLHttpRequest,textStatus)
+		success:请求成功后调用的函数(data,textStatus)(textStatus,表示请求状态)
+		error:请求失败后调用的函数(XMLHttpRequest,textStatus,errorThrown)
+		global:默认为true，表示是否触发全局Ajax事件
+   });
+ 
+3、序列化元素
+	serialize() 可以是使用吃方法包装发送给服务器的数据($("from").serialize())
+	serializeArray() 将DOM元素序列化后,返回JSON格式的数据
+	
+4、 Ajax全局事件
+	ajaxStart(fn1) 当Ajax请求开始的时候执行
+	ajaxStop(fn1) 当Ajax请求停止的时候执行
+    ajaxComplete(callback) Ajax请求完成时执行的函数
+    ajaxError(callback) Ajax请求发生错误时执行的函数，捕捉到的错误可以作为最后一个参数
+    ajaxSend(callback) Ajax请求发送前执行的函数
+    ajaxSuccess(callback) Ajax请求成功时执行的函数	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,4 @@
+﻿(1) 
+	<video id="myVide" width="500" height="281" controls="true">
+		<source src="w (1).3gp"></source>
+	</video>
