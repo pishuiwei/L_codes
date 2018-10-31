@@ -1,0 +1,20 @@
+package builder;
+
+/**
+ * 
+ * 套餐建造者类
+ * @author PW 2018/03/31
+ *
+ */
+public abstract class MealBuilder {
+
+	protected Meal meal = new Meal();
+	
+	public abstract void buildFood();
+	
+	public abstract void buildDrink();
+	
+	public Meal getMeal() {
+		return meal;
+	}
+}

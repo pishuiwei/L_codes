@@ -1,0 +1,98 @@
++基本查询语句
+	select 
+		{*|<字段列表>}
+	from <t1>,<t2>
+	where <表达式>
+	group by s1
+	having <expression>
+	order by s1 asc[desc]	
+	limit offset[,row count]
++单表查询
+	查询所有字段:
+		select * from t1	
+	查询自定字段:
+		select s1 from t1	
+	查询自定记录:
+		select * from t1 where <expression>	
+	带in关键字的查询:
+		select * from t1 where id in(1,2,...)	
+	带between and的返回查询
+		select * from t1 where id between 1 and 2
+	带like的字段匹配查询
+		select * from t1 where id like '<%><->'		
+	查询空值:
+		select * from t1 where id is null
+	带and的条件查询:
+		select * from t1 where id='s1' and name='s2' 	
+	带or的多条件查询:
+		select * from t1 where id='s1' or name='s2'	
+	查询结果不重复:
+		select distinct s1 from t1
+	对查询结果排序:
+		默认升序
+		select * from t1 order by s1 asc[desc]
+	分组查询:
+		select * from t1
+		group by s1 
+		having <expression>
+		with rollup	
+	使用limit限制查询结果的数量:
+		select * from t1 limit [位置偏移量,]行数
++使用聚合函数:
+	平均值:AVG()	 	
+	行数:COUNT()
+	最大值:MAX()
+	最小值:MIN()
+	返回某列值的和：SUM()	
++连接查询:
+	内连接(INNER JOIN)
+		select * from t1 INNER JOIN t1 ON t1.id=t2.id
+	左链接(LEFT JOIN) 
+		select * from t1 LEFT JOIN t1 ON t1.id=t2.id
+	有链接(RIGHT JOIN)
+		select * from t1 RIGHT JOIN t1 ON t1.id=t2.id
++子查询:
+	带any(some)关键字的子查询:
+		select * from t1 id > any(select s1 from t1)
+	带all关键字的子查询:
+		select * from t1 id > all(select s1 from t1)	
+	带exists关键字的子查询:
+		select * from t1 exists(select s1 from t1)	
+		select * from t1 not exists(select s1 from t1)
+	带in关键字的子查询:
+		select * from t1 id in(select s1 from t1)	
+	带比较运算符的子查询:
+		select * from t1 id=(select s1 from t1)
++合并查询结果
+	select s1,s2 from t1
+	union[all]
+	select s1,s2 from t2		
++为表和字段取别名
+	select s1 AS name from t1 AS t
++使用正则表达式查询
+	查询以特定字符或字符串开头的记录:
+		select * from t1 where id regexp '^b'	
+	查询以特定字符或字符串结尾的记录:
+		select * from t1 where id regexp 'b$'
+	用.来代替字符串中的任意字符:	
+		select * from t1 where id regexp 'a.b'
+	使用*和+匹配多个字符:
+		*匹配前面的字符任意多次包括0次，+匹配前面的字符至少一次
+		select * from t1 where id regexp '*+b'
+	匹配指定字符串:
+		select * from t1 where id regexp 'on'	
+	匹配指定字符中的任意一个:
+		select * from t1 where id regexp '[on]'	
+	匹配指定字符以外的字符:
+		select * from t1 where id regexp '[^on]'	
+	使用{n,}或者{n,m}来指定字符串连续出现的次数:
+		select * from t1 where id regexp 'x{2}'	
+	
+		
+			
+		
+		
+			
+				
+			
+	

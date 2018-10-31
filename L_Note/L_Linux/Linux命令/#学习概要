@@ -1,0 +1,3 @@
+
+$putty	用于远程连接
+	pscp是putty安装包所带的远程文件传输工具，是一款十分常见windows与linux系统之间文件互传的工具，使用方法与linux中的scp相似

@@ -1,0 +1,142 @@
++创建存储过程
+	CREATE PROCEDURE sp_name([proc_parameter])
+	[characteristics...] 
+	BEGIN
+		routine_body
+	END;
+	
+	proc_parameter = [IN|OUT|INOUT] param_name type
+	IN:必须由使用者传入实际参数初始化，不能再存储过程内部初始化，并且不会改变实际参数的值，
+	   IN还是默认值；
+	OUT:必须在存储过程内部初始化，不管是否传入实际参数默认都是null，会改变实际参数的值；
+	INOUT:可以传入实际参数来初始化，也可在存储过程内部初始化，会改变实际参数的值。
++创建存储函数
+	只能为IN类型的参数,且不需要明确指定
+	CREATE FUNCTION f_name([proc_parameter])
+	RETURNS 参数类型
+	BEGIN
+		处理逻辑;
+		RETURN value;
+	END;
++变量的使用
+	定义变量:DECLARE v1,v2... date_type [DEFAULT value]		
+	为变量赋值:SET v1 = '10';
+			SELECT 值1,值2 INTO 变量1,变量2 FROM t1
++定义条件和处理程序
+	定义条件:
+		DECLARE name CONDITION FOR SQLSTATE 'sqlstate_value'
+		DECLARE name CONDITION FOR mysql_err_code			
+	定义处理程序:
+		DECLARE handler_type HANDLER FOR condition_value sq_statement
+		handler_type(错误处理方式):
+			CONTINUE:遇到错误不处理 
+			EXIT:遇到初五马上退出
+			UNDO:遇到错误回撤到之前的操作
+		condition_value(错误类型):
+			SQLSTATE '5个字符的字符串错误值'	
+			condition:自己定义的条件
+			SQLWARNING:匹配所有以01开头的SQLSTATE错误代码
+			NOT FOUND:匹配所有以02开头的SQLSTATE错误代码
+			SQLEXCEPTION:匹配没有被SQLWARNING或 NOT FOUND匹配的SQLSTATE错误代码
+			mysql_error_code:匹配数值类型的错误代码
+		sq_statement:表示遇到定义错误时，需要执行的存储过程或函数
++光标
+	概念:必须声明在处理程序之前被声明，并且变量和条件还必须在声明光标或处理程序之前被声明,
+		只能在存储过程和函数中使用;
+	声明光标:DECLARE c_name CURSOR FOR select_statement
+	打开光标:OPEN c_name
+	使用光标:FETCH c_name INTO v1,v2
+	关闭光标:CLOSE c_name
++流程控制的使用
+	IF语句:
+		IF 表达式 
+			THEN 处理逻辑;
+			[ELSEIF 表达式 THEN 处理逻辑;]	
+			[ELSE 处理逻辑;]
+		END IF;
+	CASE语句:
+		CASE 参数 
+			WHEN 值 THEN 处理逻辑;
+			[WHEN 值 THEN 处理逻辑;]		
+			[ELSE 处理逻辑]
+		END CASE;
+		CASE
+			WHEN 表达式 THEN 处理逻辑;
+			[WHEN 表达式 THEN 处理逻辑;]		
+			[ELSE 处理逻辑]
+		END CASE;	
+	LOOP语句:
+		创建一个循环操作并且不进行判断,直到使用LEAVE退出
+		[loop_name]:LOOP
+			处理逻辑
+		END LOOP [loop_name];
+	LEAVE语句:
+		用来退出任何被标记的流程控制构造
+		LEAVE lable;
+	ITERATE语句:
+		将执行顺序转到语句段的开头处
+		ITEARATE lable;
+	REPEAT语句:
+		创建一个带循环的语句
+		执行一次后才进行判断
+		[repeat_name]:REPEAT
+			处理逻辑
+		UNTIL 表达式;
+		END REPEAT;
+	WHILE语句:
+		执行前就需要判断
+		[while_name]:WHILE 表达式 DO
+			处理逻辑;
+		END WHILE;
++调用存储过程
+	call p_name()
++调用函数
+	select f_name()
++查看存储过程和函数
+	查看状态:SHOW <PROCEDURE|FUNCTION> STATUS LIKE 'C%'								
+	查看定义:SHOW CREATE <PROCEDURE|FUNCTION> sp_name
+	从information_schema.Routines表中查看:
+		select * from information_schema.Routines
+		where ROUTINE_NAME='sp_name'
++修改存储过程和函数
+	ALTER <PROCEDURE|FUNCTION> sp_name([proc_parameter])
+	[characteristics...] 
+	BEGIN
+		routine_body
+	END;
++删除存储过程和函数
+	DROP <PROCEDURE|FUNCTION> IF EXISTS sp_name
+
+	
+	
+		
+	
+		
+		
+						
+		
+			
+		
+	
+	
+			
+		
+			
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		

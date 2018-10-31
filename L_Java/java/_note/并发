@@ -1,0 +1,6 @@
+1、使用并发解决的问题大体上可以分为“速度”和“设计可管理性”两种
+2、休眠 Thread.sleep();
+3、优先级
+4、让步Thread.yiekd();
+5、后台线程Thread.setDaemon();
+6、加入一个线程Thread.join()

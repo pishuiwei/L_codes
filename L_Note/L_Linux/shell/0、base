@@ -1,0 +1,11 @@
+
+$export	设置环境变量
+	export key="123"
+
+$echo 
+	echo $key	输出环境变量
+	echo $shell	识别当前所使用的的是那种shell
+	
+		
+		
+			

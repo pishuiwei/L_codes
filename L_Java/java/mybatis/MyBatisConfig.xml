@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 开启懒加载,执行点在应用点上 -->
+	<!-- <settings> <setting name="lazyLoadingEnable" value="true" /> <setting 
+		name="aggressiveLazyLoading" value="false"/> </settings> -->
+
+	<!-- 定义类的别名[依次为别名，类的地址] -->
+<!-- 	<typeAliases>
+		别名方式1，一个一个的配置 type中放置的是类的全路径，alias中放置的是类别名 <typeAliase type="com.cy.mybatis.beans.UserBean" 
+			alias="UserBean"/>
+		别名方式2，自动扫描，将JAVA类的类名作为类的类别名
+		<package name="learnMyBatis" />
+	</typeAliases> -->
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8" />
+				<property name="username" value="root" />
+				<property name="password" value="123456" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/pp/learn/mybatis/userMapper.xml" />
+
+		<!-- 绝对路径 -->
+		<!-- <mapper url="file://var/**Mapper.xml"/> -->
+
+		<!-- 包路径 -->
+		<!-- <package name="com.tiantian.***.mappperinterface"/> -->
+
+	</mappers>
+
+</configuration>
+
+
+
+
+
+

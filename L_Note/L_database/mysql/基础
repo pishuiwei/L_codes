@@ -1,0 +1,13 @@
++查看警告信息
+	show warning 
+	
++关键字
+	设置SQL语句结束符号:delimite// 
+	判断是否存在:exists 
+	定义参数:declare		
+	设置值:set
+	赋值个参数:into	
+	greatest、least
+		
+		
+

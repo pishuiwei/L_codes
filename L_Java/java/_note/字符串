@@ -1,0 +1,35 @@
+#常量池:java用于保存在编译期已确定的，已编译的class文件中的一份数据    
+1、创建字符串
+  String类具有immutable(不能改变)性质,当String变量需要经常变换时,
+     会产生很多变量值,应考虑使用StringBuffer(线程安全的,性能低)或StringBuilder(线程不安全安全的，性能搞)提高效率
+    （1）String ok1=new String(“ok”);
+    （2）String ok2=“ok”;
+        第一种可以能创建两个对象，第二种最多创建一个对象 
+   
+2、匹配相等   
+    equals()是看数值是否相等.而==是看是否属于同一个对象.
+    
+3、 intern()方法
+      是扩充常量池的一个方法,当一个String实例str调用intern()方法时,java会检查常量池中是否有相同的字符串,如果有则返回其引用,如果没有则在常量池中增加一个str字符串并返回它的引用    
+    
+4、String常用方法
+    length() 字符串的长度
+    charAt() 截取一个字符
+    getBytes() 获取对应字节数组
+    indexOf() 查找字符或者子串第一次出现的地方
+    substring()　　
+                它有两种形式，第一种是：String substring(int startIndex) 
+　             第二种是：String substring(int startIndex,int endIndex)
+    concat() 连接两个字符串
+    trim() 去掉起始和结尾的空格 
+    valueOf() 转换为字符串 
+    toLowerCase() 转换为小写 
+    toUpperCase() 转换为大写
+    startsWith() 方法决定是否以特定字符串开始
+    endWith() 方法决定是否以特定字符串结束
+    replace() 替换 
+　　          它有两种形式，第一种形式用一个字符在调用字符串中所有出现某个字符的地方进行替换，形式如下： 
+　　          String replace(char original,char replacement) 
+　　          例如：String s="Hello".replace('l','w'); 
+　　          第二种形式是用一个字符序列替换另一个字符序列，形式如下： 
+　　          String replace(CharSequence original,CharSequence replacement)

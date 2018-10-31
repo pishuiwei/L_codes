@@ -1,0 +1,56 @@
++权限表
+	user表:
+		是MySql中最重要的一个权限表，记录允许连接到服务器的账号信息，里面的权限是全局级的。
+	db表:
+		存储了用户对某个数据库的操作权限，决定用户能从哪个主机上存取哪个数据库。
+	host表:
+		存储了某个主机对数据库的操作权限，配合db权限表对给定主机上数据库级操作权限做的更细致的控制。
+	tables_priv表:
+		用来对表设置操作权限。
+	columns_priv:
+		用来对表的某有个列设置权限。
+	procs_priv:
+		可以对存储过程和存储函数设置操作权限。	
++账户管理
+	登录和退出MySql服务器
+		查看命令帮助信息:mysql -help
+		-h主机名
+		-u用户名
+		-p密码
+		-P端口号
+		-e执行sql语句
+		登录数据库:MySQL -u user_name -p p_pass db_name
++新建普通用户
+	创建新用户:
+		CREATE USER 'user'@'localhost' IDENTIFIED BY 'pass';
+		GRANT <SELECT,UPDATE> ON *.* T 'user'@'localhost' IDENTIFIED BY 'pass';
+		INSERT INTO user(host,user,password) values('localhost','customer1',PASSWORD('customer1'))
+		FLUSH PRIVILEGES;
++删除普通用户
+	删除用户:
+		DROP USER user[,user]		     
+		DELETE FROM MYSQL.user WHERE host='hosname' and user='username'
+	root用户修改自己的密码:
+		在命令行修改:mysqladmin -u username -h localhost -p password 'newpass'
+		修改user表:UPDATE mysql.user set password=PASSWORD("rootpass") where user='root' and host='localhost'
+		使用set语句:SET PASSWORD=PASSWORD('rootpass')
+	修改普通用户:
+		使用set语句:SET PASSWORD FOR 'user@'host'=PASSWORD('newpass')	
+		使用UPDATE语句:
+			UPDATE MySql.user SET password=PASSWORD('pass')
+			WHERE user='username' and host='hostname'
+		使用GRANT语句:
+			GRANT USAGE NO *.* TO 'someuser'@'%' IDENTIFIED BY 'somepassword';
+				
+		
+			   
+					
+		
+		
+		
+		
+		
+		
+		
+		
+								

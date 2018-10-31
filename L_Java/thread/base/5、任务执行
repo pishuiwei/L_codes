@@ -1,0 +1,32 @@
+1、Executor
+	生命周期：
+		创建、提交、开始、完成
+
+2、任务是一组逻辑单元，而线程则是使任务异步执行的机制。
+
+3、FIFO
+
+4、LIFO
+
+5、Executors
+	newFixedThreadPool
+	newCachedThreadPool
+	newSingleThreadExecutor
+	newScheduledThreadPool
+	
+6、Timer
+	
+7、ScheduledThreadPoolExecutor
+	newScheduledThreadPool
+	
+8、Callable
+
+9、Future
+	表示一个任务的生命周期
+
+10、PrivilegedAction
+
+11、ExecutorService
+
+12、CompletionService
+

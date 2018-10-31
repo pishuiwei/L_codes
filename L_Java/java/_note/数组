@@ -1,0 +1,6 @@
+ String[] s = new String[5];
+ String[] s = {};
+ String[][] strings = new String[1][1];
+ 
+ Arrays
+ ArrayUtils

@@ -1,0 +1,20 @@
+package memento;
+
+/**
+ * 负责人
+ * @author PW 2018/04/07
+ *
+ */
+public class Caretaker {
+	
+	private Memento memento;
+
+	public Memento getMemento() {
+		return memento;
+	}
+
+	public void setMemento(Memento memento) {
+		this.memento = memento;
+	}
+	
+}

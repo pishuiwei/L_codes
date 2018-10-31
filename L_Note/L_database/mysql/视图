@@ -1,0 +1,25 @@
++视图的含义
+	是一张虚拟表,是从数据库中一个或多个表中导出来的表。视图还可以从已经存在的视图基础
+	上定义。可以多视图进行增删改查，并且和实际表相互影响。
++创建视图
+	CREATE[| REPLACE] [ALGORITHM={UNDEFINED|MERGE|TEMPTABLE}]
+	VIEW view_name[(column_list)]  AS 
+	SELECT * FROM t1
+	[WITH[CASCADED|LOCAL]CHECK OPTION]
++查看视图
+	查看视图的基本信息:DESCRIBE v_name;
+	查看视图基本信息:SHOW TABLE STATUS LIKE 'v_name'
+	查看视图详细信息:SHOW CREATE VIEW v_name
+	在view表中查看详细信息:
+		SELECT * FROM information_schema.views
++修改视图		
+	CREATE OR REPLACE VIEW v_name[(column_list)] AS SELECT * FROM t;
+	ALTER view v_name[(column_list)] AS SELECT * FROM t;
++更新视图
+	UPDATE view SET s1=v1;
++删除视图
+	DROP VIEW [IF EXISTS] v_name;		
+	
+	
+	
+	

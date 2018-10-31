@@ -1,0 +1,27 @@
++数据类型
+	整数数据类型：
+		tinyint(1字节)、smallint(2字节)、mediumint(3字节)、int(4字节)、bigint(8字节)
+	浮点数据类型：
+		单精度浮点类型：float(4个字节)
+		双精度浮点类型：double(8个字节)
+		定点数据类型：decimal(M+2字节)
+	日期与时间类型：			
+		year(1字节)、time(3字节)、date(3字节)、datetime(8字节)、timestamp(4字节)
+	字符串类型：
+		char(M字节)、varchar、tinytext、text、mediumtext、longtext、enum、set
+	二进制类型：
+		bit、binary、varbinary、tinyblob、blob、mediumblob、longblob
++运算符
+	算术运算符：
+		+、-、*、/、%
+	比较运算符：
+		>、<、=(<=>)、>=、<=、!=(<>)、in、between and、is null、like、regexp
+		not in、is not null
+	逻辑运算符：
+		not(!)、and(&&)、or(||)、xor
+	位运算符：
+		&、|、^、~、<<、>>
+				
+	
+	
+						

@@ -1,0 +1,71 @@
++创建表
+	create table table_name
+	(
+		字段名1 数据类型[列级约束条件][默认值],
+		字段名1 数据类型[列级约束条件][默认值],
+		...
+		[表级约束条件]
+	)
++约束	
+	使用主键约束
+		单字段主键:
+			字段名 数据类型 primary key[默认值]
+			[constraint<约束名>] primary key[字段名]	
+		多字段主键:
+			[constraint<约束名>] primary key[字段名1,字段名2,...]
+	使用外键约束
+		[constraint<外键名>] foreign key(字段名1[,字段名2,...])
+		References<主表明>(主键列1[,主键列2,...])
+	使用非空约束
+		字段名 数据类型 not null
+	使用唯一约束
+		字段名 数据类型 unique
+		[constraint<约束名>] unique(<字段名>)		
+	使用默认约束
+		字段名 数据类型 default 默认值
+	设置表的属性自动增加
+		字段名 数据类型 auto_increment
+查看表的结构
+	查看表基本结构
+		describe tab_name
+		desc tab_name
+	查看表详细结构
+		show create table tab_name
++修改数据表
+	修改表明
+		alter table<旧表名> rename[to]<新表明> 			
+	修改字段的数据类型
+		alter table<表名> modify<字段名> <数据类型> 
+	修改字段名
+		alter table<表名> change<旧字段名><新字段名><新数据类型>
+	添加字段
+		alter table<表名> add<新字段名><数据类型>[约束条件][first|after 已存在字段名]	
+	删除字段
+		alter table<表名> drop<字段名>	
+	修改字段的排序位置
+		alter table<表名> modify<字段1><数据类型> first|after<字段2>   	
+	更改表的存储引擎
+		alter table<表名> engine=<更改后的存储引擎名>	
+	删除表的外键约束
+		alter table<表名> drop foreign key<外键约束名>	
++删除数据表
+	删除没有被关联的表
+		drop table[if exists]表1,表2,...
+	删除整张表	
+		truncate table 表名
+	删除被其他表关联的主表
+		先删外表，在删父表
+		先取消外键，在删父表
+		
+					
+			
+	
+		
+				
+	
+	
+	
+	
+	
+	
+				

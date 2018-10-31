@@ -1,0 +1,54 @@
+$traceroute(tracert)	用于追踪数据包在网络上的传输时的全部路径，它默认发送的数据包大小是40字节
+
+$tcpdump命令是一款sniffer工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用-w选项将数据包保存到文件中，方便以后分析。
+	直接启动tcpdump将监视第一个网络接口上所有流过的数据包
+		tcpdum
+	监视指定网络接口的数据包
+		tcpdump -i eth1
+	监视指定主机的数据包
+		tcpdump host hostName[ip]
+		
+$firewall
+	1,显示所有配置
+		firewall-cmd --list-all-zones
+	2,重新加载配置
+		firewall-cmd --reload
+	3,从public移除 interface
+		firewall-cmd --zone=public --remove-interface=eno16777736
+	4,查询外网端口
+		firewall-cmd --permanent --query-port=8080/tcp
+	5,删除8080端口，禁止外网访问
+		firewall-cmd --permanent --remove-port=8080/tcp
+	6,添加8080端口，供外网访问
+		firewall-cmd --permanent --add-port=8080/tcp
+	7,重启防火墙
+		systemctl restart firewalld
+	8,将发往80端口的请求转发到8080
+		firewall-cmd --add-forward-port=port=80:proto=tcp:toport=8080
+	9，查看一下防火墙现在开启了哪些服务和端口
+		firewall-cmd --list-all
+	10,设置默认的zone
+		irewall-cmd --get-default-zone
+		firewall-cmd --set-default-zone=trusted		
+
+$iptables命令是Linux上常用的防火墙软件，是netfilter项目的一部分。可以直接配置，也可以通过许多前端和图形界面配置。
+	
+$nc命令是netcat命令的简称，都是用来设置路由器。
+
+$ifconfig命令被用于配置和显示Linux内核中网络接口的网络参数	
+
+$route命令用来显示并设置Linux内核中的网络路由表，route命令设置的路由主要是静态路由
+
+$nslookup命令是常用域名查询工具，就是查DNS信息用的命令
+
+$host命令是常用的分析域名查询工具，可以用来测试域名系统工作是否正常。
+
+
+
+
+
+
+
+
+
+
