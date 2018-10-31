@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJsDemo</title>
+<script src="angular.js"></script>
+<script type="text/javascript" src="myAngular.js"></script>
+</head>
+<body ng-app="app">
+	
+	<input type="text" myFilter>
+	
+	<div ng-controller="appC">{{"hello" | myFilter}}</div>
+	
+</body>
+
+<script type="text/javascript">
+	
+	var myScope;
+
+	var app = angular.module("app",[]);
+	
+	// 控制器
+	app.controller("appC", function($scope, $log, $http){
+	 	$scope.list = [{"name":"a"},{"name":"b"},{"name":"c"}];
+	 	myScope = $scope;
+	 	
+	 	$http({
+	 		method: 'GET',
+	 		url: 'myAngular.js'
+	 	}).then(function successCcallback(response){
+	 		console.log("responseS:" + JSON.stringify(response));
+	 	},function errorCallback(response){
+	 		console.log("responseE:" + JSON.stringify(response));
+	 	})
+	 	
+	 	$log.log(arguments);
+	 	
+	});
+	
+	// 指令
+	app.directive("ngDirective", function() {
+		var obj = {
+			restrict: "EACM", //E: 一元素的形式在Dom中, A: 属性, C: class中, E: 注解中
+			priority: "100", // 优先级
+			terminal: false, // 为true时优先级低于该指令的其他指令则无效  
+			template: "<div>hello world!</div>", // 也可以是一个函数 function(element, attrs)
+			replace: false, // 默认false, 为true时则不会显示<name></name>标签
+			templateUrl: "", // 与template大致相同
+			scope: false, // 布尔值或者对象，true表示继承父作用域，并创建自己的作用域，改变父亲的值儿子的值会改变;
+						  // false表示继承父作用域,改变父亲的值儿子的值会改变，反之亦然
+						  // {}表示创建一个全新的作用域
+						  // @: 单向绑定; =: 双向绑定; $: 条用父类的函数
+			transclude: false, // 默认为false， 为true时使用ng-transclude显示指令标签中的内容
+			controller: function() {}, // 可以是字符串和函数 
+			require: "^?", // 字符串或者数组， 字符串代表另一个指令的名字， 他将作为link函数的第4个参数
+			link: function(scope, element, attrs, requireController) {},
+			compile: function(element, attrs, transclude) {}
+		};
+		
+		return obj;
+	});
+	
+	
+	// 过滤器
+	app.filter("myFilter", function() {
+		var fn = function(input, v1, v2) {
+			return input + "你好";
+		}
+		return fn;
+	})
+	
+	app.run();
+	
+		
+</script>
+</html>
+
+
+
+
+
+
