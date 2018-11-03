@@ -5,6 +5,9 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 import java.io.*;
 
+/**
+ * @WebServlet("/DownloadDemo") 中的‘/’一定要加
+ */
 @WebServlet("/DownloadDemo")
 public class DownloadDemo extends HttpServlet {
 
