@@ -1,21 +1,24 @@
-package main.FileDownload;
+package src.main.FileDownload;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 import java.io.*;
 
-//@WebServlet("demo")
+@WebServlet("/DownloadDemo")
 public class DownloadDemo extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        System.out.println("TestB!:" + this.getServletContext().getMimeType("pom.xml"));
+
         resp.setContentType(this.getServletContext().getMimeType("pom.xml"));
         resp.setHeader("Content-Disposition", "attachment;filename=pom.xml");
 
-//        String fileName = req.getParameter("filename");
+//      String fileName = req.getParameter("filename");
         String path = this.getServletContext().getRealPath("pom.xml");
-//        String path = this.getServletContext().getMimeType(fileName);
+//      String path = this.getServletContext().getMimeType(fileName);
 
         OutputStream out = resp.getOutputStream();
         InputStream in = new FileInputStream(path);
@@ -27,11 +30,14 @@ public class DownloadDemo extends HttpServlet {
 
 //        out.close();
         in.close();
+
+        System.out.println("A:" + this.getServletContext().getRealPath("pom.xml"));
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
+        System.out.println("TestA!");
     }
 }
 
