@@ -11,8 +11,12 @@ import java.io.*;
 @WebServlet("/DownloadDemo")
 public class DownloadDemo extends HttpServlet {
 
+    private long count;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        System.out.println("count:" + ++count);
 
         System.out.println("TestB!:" + this.getServletContext().getMimeType("pom.xml"));
 
