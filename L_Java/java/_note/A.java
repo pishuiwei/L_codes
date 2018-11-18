@@ -14,6 +14,10 @@ public class A {
         System.out.println(atomicReference.get());
 
         System.out.println(atomicLong);
+
+
+
+        Thread thread = new Thread("");
     }
 
 }
