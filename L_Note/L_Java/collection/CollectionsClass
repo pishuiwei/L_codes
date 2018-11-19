@@ -1,0 +1,5 @@
+
+Collections.synchronizedList
+Collections.synchronizedMap
+Collections.synchronizedSet
+Collections.unmodifiableMap

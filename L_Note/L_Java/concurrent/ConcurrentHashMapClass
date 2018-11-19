@@ -1,0 +1,6 @@
+1、ConcurrentHashMap是J.U.C(java.util.concurrent包)的重要成员，它是HashMap的一个线程安全的、支持高效并发的版本。在
+默认理想状态下，ConcurrentHashMap可以支持16个线程执行并发写操作及任意数量线程的读操作
+
+
+ConcurrentMap
+

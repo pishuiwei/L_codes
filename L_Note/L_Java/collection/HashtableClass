@@ -1,0 +1,7 @@
+1、HashTable是同步的，HashMap不是，也就是说HashTable在多线程使用的情况下，不需要做额外的同步，而HashMap则不行。
+   那么HashTable是怎么做到的呢？
+
+2、HashTable已经被淘汰了，不要在代码中再使用它。
+   如果需要线程安全，那么使用ConcurrentHashMa
+
+
