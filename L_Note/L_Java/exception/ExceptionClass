@@ -1,0 +1,11 @@
+
+InterruptedException
+    表示阻塞操作由于中断而提前结束。
+
+TimeoutException
+
+ClosedByInterruptException
+
+AsynchronousCloseException
+
+RuntimeException
