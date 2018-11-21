@@ -1,0 +1,25 @@
+1、、可取消的异步计算。利用开始和取消计算的方法、查询计算是否完成的方法和获取计算结果的方法，此类提供了对 Future
+的基本实现。仅在计算完成时才能获取结果；如果计算尚未完成，则阻塞 get 方法。一旦计算完成，就不能再重新开始或取消计算。
+
+
+2、
+      boolean	cancel(boolean mayInterruptIfRunning)
+                试图取消对此任务的执行。
+      protected  void	done()
+                当此任务转换到状态 isDone（不管是正常地还是通过取消）时，调用受保护的方法。
+       V	get()
+                如有必要，等待计算完成，然后获取其结果。
+       V	get(long timeout, TimeUnit unit)
+                如有必要，最多等待为使计算完成所给定的时间之后，获取其结果（如果结果可用）。
+       boolean	isCancelled()
+                如果在任务正常完成前将其取消，则返回 true。
+       boolean	isDone()
+                如果任务已完成，则返回 true。
+       void	run()
+                除非已将此 Future 取消，否则将其设置为其计算的结果。
+      protected  boolean	runAndReset()
+                执行计算而不设置其结果，然后将此 Future 重置为初始状态，如果计算遇到异常或已取消，则该操作失败。
+      protected  void	set(V v)
+                除非已经设置了此 Future 或已将其取消，否则将其结果设置为给定的值。
+      protected  void	setException(Throwable t)
+                除非已经设置了此 Future 或已将其取消，否则它将报告一个 ExecutionException，并将给定的 throwable 作为其原因。

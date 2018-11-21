@@ -1,0 +1,9 @@
+1、
+启用特权的情况下要执行的计算。通过在 PrivilegedAction 对象上调用 AccessController.doPrivileged 执行该计算。此接口只用于那些不
+抛出经过检查的异常的计算；抛出经过检查的异常的计算必须使用 PrivilegedExceptionAction。
+
+2、
+    T run()
+    执行计算。此方法将在启动优先级后由 AccessController.doPrivileged 调用。
+    返回：
+    可以表示计算结果的与类有关的值。每个实现 PrivilegedAction 的类都应该记录是否此值表示某些内容及其表示的内容。

@@ -9,3 +9,13 @@ ClosedByInterruptException
 AsynchronousCloseException
 
 RuntimeException
+
+OutOfMemoryError
+
+ExecutionException
+
+CancellationException
+
+TimeoutException
+
+Throwable

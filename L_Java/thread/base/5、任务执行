@@ -5,8 +5,10 @@
 2、任务是一组逻辑单元，而线程则是使任务异步执行的机制。
 
 3、FIFO
+    先进先出
 
 4、LIFO
+    后进先出
 
 5、Executors
 	newFixedThreadPool

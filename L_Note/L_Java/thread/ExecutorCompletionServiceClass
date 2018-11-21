@@ -1,0 +1,21 @@
+1、ExecutorCompletionService
+    使用提供的 Executor 来执行任务的 CompletionService。此类将安排那些完成时提交的任务，把它们放置在可使用 take
+    访问的队列上。该类非常轻便，适合于在执行几组任务时临时使用。
+
+2、构造函数
+    ExecutorCompletionService(Executor executor)
+              使用为执行基本任务而提供的执行程序创建一个 ExecutorCompletionService，并将 LinkedBlockingQueue 作为完成队列。
+    ExecutorCompletionService(Executor executor, BlockingQueue<Future<V>> completionQueue)
+              使用为执行基本任务而提供的执行程序创建一个 ExecutorCompletionService，并将所提供的队列作为其完成队列。
+
+3、方法摘要
+     Future<V>	poll()
+              获取并移除表示下一个已完成任务的 Future，如果不存在这样的任务，则返回 null。
+     Future<V>	poll(long timeout, TimeUnit unit)
+              获取并移除表示下一个已完成任务的 Future，如果目前不存在这样的任务，则将等待指定的时间（如果有必要）。
+     Future<V>	submit(Callable<V> task)
+              提交要执行的值返回任务，并返回表示挂起的任务结果的 Future。
+     Future<V>	submit(Runnable task, V result)
+              提交要执行的 Runnable 任务，并返回一个表示任务完成的 Future，可以提取或轮询此任务。
+     Future<V>	take()
+              获取并移除表示下一个已完成任务的 Future，如果目前不存在这样的任务，则等待。

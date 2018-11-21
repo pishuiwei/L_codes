@@ -1,0 +1,3 @@
+1、Executor：
+    定义了一个接收Runnable对象的方法executor，其方法签名为executor(Runnable command)
+    executor用来执行线程。
