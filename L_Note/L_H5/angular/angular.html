@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <title>AngularJsDemo</title>
 <script src="angular.js"></script>
-<script type="text/javascript" src="myAngular.js"></script>
+<!--<script type="text/javascript" src="myAngular.js"></script>-->
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="appC">
 	
-	<input type="text" myFilter>
+	<input type="text" ng-model="name" name="user" id="user">
+
+	<div>{{name}}</div>
 	
-	<div ng-controller="appC">{{"hello" | myFilter}}</div>
+	<div>{{"hello" | myFilter}}</div>
 	
 </body>
 
@@ -24,6 +26,8 @@
 	app.controller("appC", function($scope, $log, $http){
 	 	$scope.list = [{"name":"a"},{"name":"b"},{"name":"c"}];
 	 	myScope = $scope;
+
+	 	$scope.name = "test";
 	 	
 	 	$http({
 	 		method: 'GET',
@@ -33,9 +37,17 @@
 	 	},function errorCallback(response){
 	 		console.log("responseE:" + JSON.stringify(response));
 	 	})
-	 	
+
 	 	$log.log(arguments);
-	 	
+
+	 	setTimeout(function () {
+	 	    $scope.$apply(function(){
+                $scope.name = "123";
+			})
+			console.log("info");
+        },1000 * 10)
+
+
 	});
 	
 	// 指令

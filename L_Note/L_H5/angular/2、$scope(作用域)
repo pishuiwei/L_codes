@@ -1,6 +1,5 @@
 	$scope:
-	 	$scope.$watch("value", function(newValue, oldValue) { // 监听value的变化
-	 	},true)
+	 	.$watch("value", function(newValue, oldValue) {},true) // 监听value的变化
 		.$watchCollection(name, fn(newVal, oldVal){}) 	 	  // 同$watch
 		.$watchGroup(watchExpressions, listener);			 // 监听多个对象
 		
@@ -10,8 +9,15 @@
 		.$on(name. listener) 	// 接受事件
 		.$emit(name, args) 		// 向上广播事件
 		.$broadcast(name. args) // 向子类广播
-		
+
 		.$eval(expr, locals) // 把字符转化为angular表达式
-		.$apply() 	 		 // $apply方法传播Model的变化
-		.$evalAsync() 		//  
-		
+
+        // 用到这两个方法的情况是浏览器DMO events，setTimeout, XHR等地方
+		.$apply([function]) 	 		 // 传播Model的变化
+		.$evalAsync([function]) 		 //  传播Model的变化
+
+		.$timeout   // 延迟执行
+
+    e:
+        .$on("$destroy",function())     // 监听浏览器关闭
+

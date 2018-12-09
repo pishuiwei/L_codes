@@ -11,7 +11,7 @@
 	
 </head>
 <body ng-app="app" ng-controller="appController">
-	<div>刘昌龙</div>
+	<div></div>
 	<div ng-bind="'log' | translate"></div>
 	
 	<div></div>
@@ -24,8 +24,7 @@
 	
 	angular.module("app").controller("appController",function($scope, $compile, $q, $injector) {
 		var myHttp = $injector.get("myHttp");
-		
-		debugger;
+
 		myHttp.then(function(response) {
 			console.log("response: " + response);
 		})
