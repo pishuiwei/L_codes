@@ -5,9 +5,13 @@ public class IOStream {
 
     public static void main(String[] args) throws IOException {
 
+        byte b = 127;
+
         System.out.println();
 
-        IOStream.generateCharacters0(System.out);
+
+
+        IOStream.generateCharacters1(System.out);
 
     }
 
