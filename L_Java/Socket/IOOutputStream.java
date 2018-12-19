@@ -1,20 +1,14 @@
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class IOStream {
+public class IOOutputStream {
 
     public static void main(String[] args) throws IOException {
-
         byte b = 127;
-
         System.out.println();
-
-
-
-        IOStream.generateCharacters1(System.out);
-
+        IOOutputStream.generateCharacters1(System.out);
     }
-
 
     public static void generateCharacters0(OutputStream out) throws IOException {
         int firstPrintableCharacter = 33;
@@ -56,7 +50,38 @@ public class IOStream {
         }
     }
 
+    /**
+     *  Java7新引进的"带资源的try"。
+     *
+     *  Java会对try块参数表中声明的所有AutoCloseable对象自动调用close。
+     *
+     *  可以减少对finally块的使用
+     *
+     */
+    public void tryWithResources() {
+        try(OutputStream out = new FileOutputStream("")) {
+
+        } catch (IOException ex) {
+
+        }
+    }
+
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

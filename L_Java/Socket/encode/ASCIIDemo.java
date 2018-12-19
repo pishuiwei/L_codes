@@ -2,13 +2,13 @@ package encode;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.Arrays;
 
 public class ASCIIDemo {
 
     public static void main(String[] args) throws UnsupportedEncodingException {
 //        changeUTF8();
-
         changeCharStringByte();
     }
 
@@ -18,9 +18,11 @@ public class ASCIIDemo {
     public static void changeCharStringByte() throws UnsupportedEncodingException {
         String my = "汉";
         char c ='汉';
+        char u = '\u6241';
 
         // 字符转化为int
         System.out.println("c:" + (int)c);  // 27721
+        System.out.println("u:" + u);
 
         // 把字符串转化为指定编码格式的字节数组
         System.out.println(Arrays.toString(my.getBytes("UTF-8"))); //[-26,-79,-119]
@@ -30,12 +32,14 @@ public class ASCIIDemo {
     }
 
     /**
-     * 把UFT-8编码的字符转化成汉字
+     * 把UFT-8编码的字符转化成汉字，或者把汉字转换成UTF-8编码
      * @throws UnsupportedEncodingException
      */
     public static void changeUTF8() throws UnsupportedEncodingException {
         String str = "%E6%98%9F%E6%9C%9F%E5%87%A0";
         String  chiStr = URLDecoder.decode(str,"UTF-8");
+
+        System.out.println(URLEncoder.encode("我","UTF-8"));
 
         System.out.println(chiStr);
     }

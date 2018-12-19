@@ -1,7 +1,25 @@
 1、Java的I/O建立与流（stream）之上。
     输入流读取数据，输出流写入数据。
 
-2、基本输出流
+2、输出流
     OutputStream
+    FileInputStream
 
-3、
+3、输入流
+    TelnetOutputStream
+    DataOutputStream
+    ByteArrayOutputStream
+
+    BufferedOutputStream
+    BufferedWrite
+
+4、过滤流
+
+5、缓冲流
+    BufferedOutputStream
+    BufferedInputStream
+
+6、数据流
+    可以用二进制格式读/写Java的基本数据类型和字符串。
+    DataInputStream
+    DataOutputStream
