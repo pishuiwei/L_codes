@@ -7,7 +7,13 @@ import java.io.*;
  *
  *  available()方法给出了不阻塞的情况下有多少字节可以读取（当前建议读取的字节）。
  *  sipe() 方法跳过数据不进行读取。
- * @see InputStream
+ *
+ * @see     java.io.InputStream
+ * @see     java.io.BufferedInputStream
+ * @see     java.io.ByteArrayInputStream
+ * @see     java.io.DataInputStream
+ * @see     java.io.FilterInputStream
+ * @see     java.io.PushbackInputStream
  */
 public class IOInputStream {
 

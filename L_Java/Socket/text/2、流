@@ -23,3 +23,20 @@
     可以用二进制格式读/写Java的基本数据类型和字符串。
     DataInputStream
     DataOutputStream
+
+7、阅读器和书写器
+    Reader
+    Writer
+
+
+
+
+
+
+
+
+
+
+
+
+

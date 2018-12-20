@@ -29,6 +29,10 @@ public class ASCIIDemo {
 
         // 字节数组转化为字符串
         System.out.println(new String(my.getBytes("ISO8859-1")));
+
+        // 字节转化为int
+        System.out.println(Byte.toUnsignedInt((byte)-1));
+
     }
 
     /**
