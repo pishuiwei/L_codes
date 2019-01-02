@@ -14,6 +14,8 @@ import java.net.URLConnection;
  * 他来获取这个资源的一个表示。与之不同的是，通用的URI可以告诉你一个资源时什么，但是
  * 无法告诉你他在哪里。
  *
+ * URL中的字符仅限于ASCII编码
+ *
  *  URL组成部分：
  *      模式（协议）、授权机构、路径、片段标识（段、ref）、查询字符串
  *
@@ -39,7 +41,6 @@ public class NetURL {
 
         Object o = url.getContent(); // 获取由URL引用的数据，尝试由它建立某种类型的对象
         Object o1 = url.getContent(new Class[]{});
-
 
         System.out.println("o:" + o.getClass().getName());
 
