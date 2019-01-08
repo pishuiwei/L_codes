@@ -43,6 +43,4 @@ public class HTTP {
      */
     public void response() {}
 
-
-
 }
