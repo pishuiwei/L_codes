@@ -1,3 +1,0 @@
-1.ordinal() 获取枚举放入的顺序
-2.values() 获取一个枚举数组
-3.每个枚举类型都会默认继承类java.lang.Enum，而该类实现了Serializable接口
