@@ -1,6 +1,0 @@
-1、泛型类   class GenericDemo<E>
-2、泛型方法  public E tell(E e)
-3、泛型方法  public <T> T a(T t)
-4、泛型数组  <T> T[] f(T[] t)
-5、通配符 ?
-6、泛型接口 interface demo<E>
