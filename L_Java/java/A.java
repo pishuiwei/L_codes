@@ -13,6 +13,7 @@ public class A extends  Thread{
             }
         });
 
+        String s;
 
     }
 

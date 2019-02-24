@@ -1,9 +1,6 @@
 package _note;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.*;
-import java.math.BigInteger;
+import java.awt.*;
 
 
 /**
@@ -21,6 +18,9 @@ public class Test {
 	}
 	
 	public static void main(String[] args) throws AWTException {
+
+		Throwable d;
+
 //        // 创建机器人
 //        Robot robot = new Robot();
 //        // 设置默认休眠时间
@@ -30,9 +30,9 @@ public class Test {
 //        robot.delay(20);
 //        robot.mouseRelease(MouseEvent.BUTTON2_MASK);
         
-		BigInteger p = BigInteger.ONE;
+	/*	BigInteger p = BigInteger.ONE;
 		
-		System.out.println(p.nextProbablePrime());
+		System.out.println(p.nextProbablePrime());*/
         
 	}	
 	
