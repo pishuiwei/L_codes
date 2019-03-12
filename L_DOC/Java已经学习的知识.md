@@ -46,8 +46,6 @@
  + mybatis
  + logback
  
- ## C语言已经学习的知识
- + 
  
  
  
