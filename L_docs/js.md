@@ -19,5 +19,7 @@
 + AngularJS 路由
 + $watch, $watchCollection, $watchGroup的使用
 + angular中的$on、$emit、$broadcast
-+ 
++ 国际化
++ $q
++ $destroy
 
