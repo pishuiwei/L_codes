@@ -1,92 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>AngularJS</title>
-    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
-    <script src="https://cdn.bootcss.com/angular-translate/2.18.1/angular-translate.min.js"></script>
-    <script src="https://cdn.bootcss.com/angular-translate-loader-static-files/2.18.1/angular-translate-loader-static-files.min.js"></script>
+    <title>A Simple Canvas Example</title>
+    <style>
+
+    body {
+        background: #dddddd;
+    }
+    #canvas {
+        margin: 10px;
+        padding: 10px;
+        background: #ffffff;
+        border: thin inset #aaaaaa;
+    }
+    </style>
 </head>
-<body ng-app='index' ng-controller="indexController">
-
-<h3 ng-bind-html="'TITLE' | translate | trustHtml"></h3>
-
-<select ng-model="lang">
-    <option value="zh" selected = "selected" >{{'ZH' | translate}}</option>
-    <option value="en">{{'EN' | translate}}</option>
-</select>
-
-</body>
+<body>
+    <!-- 通过设置width和height属性会改变canvas本身大小以及绘图大小 -->
+    <!-- 通过css设置width和height只会改变canvas本身大小-->
+    <canvas id="canvas" width="600" height="300">
+        Canvas not supported(浏览器在不支持canvas元素时显示)
+    </canvas>
 
 <script>
-    // https://angular-translate.github.io/docs/#/guide/19_security
-    angular.module('index',['pascalprecht.translate']);
 
-    angular.module('index').config(['$injector',function ($injector) {
-        var $translateProvider = $injector.get('$translateProvider');
-        // $translateProvider.useStaticFilesLoader({
-        //     prefix: '/T/',
-        //     suffix: '.json'
-        // });
+    var canvas = document.getElementById('canvas');
+    context = canvas.getContext("2d");
 
-        $translateProvider.translations('en',{
-            'TITLE':"<h1>Hello</h1>",
-            'FOO':'This is a paragraph',
-            'ZH':' Chinese',
-            'EN':'English'
-        });
+    context.font = "38pt Arial";
+    context.fillStyle = 'cornflowerblue';
+    context.fillText('Hello Canvas',canvas.width/2 - 150, canvas.height/2 + 15);
 
-        $translateProvider.translations('zh',{
-            'TITLE':"<h1>你好</h1>",
-            'FOO':'这是一幅图',
-            'ZH':'中文',
-            'EN':'英文'
-        });
-
-        // // 当前使用的语言
-        // $translateProvider.preferredLanguage("zh");
-        //
-        // // 默认加载语言包
-        // $translateProvider.fallbackLanguage('zh');
-
-        //
-        // sanitize：使用翻译文本清理HTML $sanitize
-        // escape：在翻译中转义HTML
-        // sanitizeParameters：使用插值参数的值清理HTML中的HTML $sanitize
-        // escapeParameters：在插值参数的值中转义HTML
-        // sce：在$sce.trustAsHtml（值）中包装HTML
-        // sceParameters：在$ sce.trustAsHtml（value）中的插值参数的值中包装HTML
-        $translateProvider.useSanitizeValueStrategy(['escapeParameters']);
-
-        // $translateProvider.useLoader('translationLoader');
-
-    }]);
-
-    // 选择框改变时，改变语言
-    angular.module('index').controller('indexController',['$scope','$injector',
-        function indexController($scope, $injector){
-
-            $scope.lang = "zh";
-
-            var $translate = $injector.get('$translate');
-
-            $scope.$watch("lang", function (newValue) {
-                $translate.use(newValue);
-            });
-
-        }]);
-
-    // 转义HTML标签
-    angular.module('index').filter('trustHtml', ['$sce', function ($sce) {
-        return function (input) {
-            return $sce.trustAsHtml(input);
-        }
-    }])
-
-
-
-
+    context.strokeText('Hello Canvas',canvas.width/2 - 150,canvas.height/2 + 15);
 
 </script>
-
+</body>
 </html>

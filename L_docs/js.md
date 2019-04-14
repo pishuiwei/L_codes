@@ -23,3 +23,15 @@
 + $q
 + $destroy
 
+# JQuery
++ jquery选择器
++ jquery中的DOM操作
++ jquery中的事件和动画
++ jquery与Ajax
++ jquery插件的使用和写法
++ jquery常用方法
+
+# HTML5 Canvas核心技术 图形、动画与游戏开发
++ 
+
+
