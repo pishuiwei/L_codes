@@ -32,6 +32,9 @@
 + jquery常用方法
 
 # HTML5 Canvas核心技术 图形、动画与游戏开发
++ canvas元素
++ canvas2D绘图环境属性
++ canvas状态的保存与恢复
++ canvas事件
 + 
-
 
