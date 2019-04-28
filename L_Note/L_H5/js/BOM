@@ -109,18 +109,18 @@
 	history对象保存着用户上网的历史记录，从窗口被打开的那一刻算起。因为history 是window
 	对象的属性，因此每个浏览器窗口、每个标签页乃至每个框架，都有自己的history 对象与特定的
 	window 对象关联
-	//后退一页
-	history.go(-1);
-	//前进一页
-	history.go(1);
-	//前进两页
-	history.go(2);
-	//跳转到最近的wrox.com 页面
-	history.go("wrox.com");
-	//跳转到最近的nczonline.net 页面
-	history.go("nczonline.net");
-	//后退一页
-	history.back();
-	//前进一页
-	history.forward();
+    //后退一页
+    history.go(-1);
+    //前进一页
+    history.go(1);
+    //前进两页
+    history.go(2);
+    //跳转到最近的wrox.com 页面
+    history.go("wrox.com");
+    //跳转到最近的nczonline.net 页面
+    history.go("nczonline.net");
+    //后退一页
+    history.back();
+    //前进一页
+    history.forward();
 		
