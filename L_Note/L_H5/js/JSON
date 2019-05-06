@@ -1,9 +1,0 @@
-+对象与JSON
-	与对象的区别在于JSON属性名必须加"",对象则不是必须的
-+JSON对象
-	{"name": "Nicholas","age": 29}
-+JSON数组
-	[{"name": "Nicholas","age": 29},{"name": "Nicholas","age": 29}]
-+JSON类型的方法	
-	JSON.stringify(obj,[要显示的属性],[字符缩进])
-	JSON.parse(jsonTest,function(key, value){})	
