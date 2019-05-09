@@ -1,8 +1,0 @@
-﻿(1) box-sizing: content-box|border-box|inherit;
-    通常结合浮动使用(float)让div排成一排
-
-(2) outline:颜色 风格 宽度	
-    定义元素周围的轮廓线，例如input周围的边框
-    none表示没有
-   
-(3) 修改过的真的？
