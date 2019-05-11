@@ -1,0 +1,54 @@
+|方法|描述|
+|:----|----|
+|void	addRequestProperty(String key, String value)|添加由键值对指定的常规请求属性。|
+|abstract void	connect()|如果尚未建立此类连接，则打开此URL引用的资源的通信链接。|
+|boolean	getAllowUserInteraction()|返回allowUserInteraction此对象的字段值。|
+|int	getConnectTimeout()|返回连接超时的设置。|
+|Object	getContent()|检索此URL连接的内容。|
+|Object	getContent(Class[] classes)|检索此URL连接的内容。|
+|String	getContentEncoding()|返回content-encoding标头字段的值。|
+|int	getContentLength()|返回content-length标头字段的值。|
+|long	getContentLengthLong()|content-length以long形式返回标头字段的值。|
+|String	getContentType()|返回content-type标头字段的值。|
+|long	getDate()|返回date标头字段的值。|
+|static boolean	getDefaultAllowUserInteraction()|返回allowUserInteraction 字段的默认值。|
+|static String	getDefaultRequestProperty(String key)|已过时。|
+|在获得适当的URLConnection实例后，应使用特定于实例的getRequestProperty方法。|boolean	getDefaultUseCaches()|
+|返回的默认值URLConnection的 useCaches标志。|boolean	getDoInput()|
+|返回此价值URLConnection的 doInput标志。|boolean	getDoOutput()|
+|返回此价值URLConnection的 doOutput标志。|long	getExpiration()|
+|返回expires标头字段的值。|static FileNameMap	getFileNameMap()|
+|从数据文件加载文件名映射（mimetable）。|String	getHeaderField(int n)|
+|返回nth头字段的值。|String	getHeaderField(String name)|
+|返回指定标头字段的值。|long	getHeaderFieldDate(String name, long Default)|
+|返回作为日期解析的命名字段的值。|int	getHeaderFieldInt(String name, int Default)|
+|返回作为数字解析的命名字段的值。|String	getHeaderFieldKey(int n)|
+|返回nth头字段的键。|long	getHeaderFieldLong(String name, long Default)|
+|返回作为数字解析的命名字段的值。|Map<String,List<String>>	getHeaderFields()|
+|返回标头字段的不可修改的Map。|long	getIfModifiedSince()|
+|返回此对象ifModifiedSince字段的值。|InputStream	getInputStream()|
+|返回从此打开的连接读取的输入流。|long	getLastModified()|
+|返回last-modified标头字段的值。|OutputStream	getOutputStream()|
+|返回写入此连接的输出流。|Permission	getPermission()|
+|返回一个权限对象，表示进行此对象表示的连接所需的权限。|int	getReadTimeout()|
+|返回读取超时的设置。|Map<String,List<String>>	getRequestProperties()|
+|返回此连接的一般请求属性的不可修改的Map。|String	getRequestProperty(String key)|
+|返回此连接的命名常规请求属性的值。|URL	getURL()|
+|返回此值URLConnection的URL 字段。|boolean	getUseCaches()|
+|返回此值URLConnection的 useCaches字段。|static String	guessContentTypeFromName(String fname)|
+|尝试根据URL的指定“文件”组件确定对象的内容类型。|static String	guessContentTypeFromStream(InputStream is)|
+|尝试根据输入流开头的字符确定输入流的类型。|void	setAllowUserInteraction(boolean allowuserinteraction)|
+|设置此allowUserInteraction字段的值URLConnection。|void	setConnectTimeout(int timeout)|
+|设置在打开与此URLConnection引用的资源的通信链接时要使用的指定超时值（以毫秒为单位）。|static void	setContentHandlerFactory(ContentHandlerFactory fac)|
+|设置ContentHandlerFactory应用程序。|static void	setDefaultAllowUserInteraction(boolean defaultallowuserinteraction)|
+|将allowUserInteraction所有将来URLConnection对象的字段的默认值设置 为 指定值。|static void	setDefaultRequestProperty(String key, String value)|
+|已过时。|在获得适当的URLConnection实例后，应使用特定于实例的setRequestProperty方法。调用此方法将不起作用。|
+|void	setDefaultUseCaches(boolean defaultusecaches)|将useCaches字段的默认值设置为指定值。|
+|void	setDoInput(boolean doinput)|将此doInput字段的值设置为 URLConnection指定值。|
+|void	setDoOutput(boolean dooutput)|将此doOutput字段的值设置为 URLConnection指定值。|
+|static void	setFileNameMap(FileNameMap map)|设置FileNameMap。|
+|void	setIfModifiedSince(long ifmodifiedsince)|将其ifModifiedSince字段的值设置为URLConnection指定的值。|
+|void	setReadTimeout(int timeout)|将读取超时设置为指定的超时（以毫秒为单位）。|
+|void	setRequestProperty(String key, String value)|设置常规请求属性。|
+|void	setUseCaches(boolean usecaches)|将其useCaches字段 的值设置为URLConnection指定的值。|
+|String	toString()|返回String此URL连接的表示形式。|
