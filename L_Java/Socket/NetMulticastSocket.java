@@ -30,7 +30,7 @@ public class NetMulticastSocket {
 
         // 向组播地址发送数据
         InetAddress ia = InetAddress.getByName("experiment.mcast.net");
-        byte[] data = "Here's some multicast dta\r\n".getBytes("UTF-8");
+        byte[] data = "Here'sources some multicast dta\r\n".getBytes("UTF-8");
         int port = 4000;
         DatagramPacket dp = new DatagramPacket(data, data.length, ia, port);
         MulticastSocket multicastSocket = new MulticastSocket();

@@ -34,7 +34,7 @@
 //
 //	}
 //
-//	public static void t(int[] data) {
+//	public static void target(int[] data) {
 //		int temp;
 //		int i;
 //		for (i = 0; i < data.length; i++) {

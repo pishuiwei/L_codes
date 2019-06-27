@@ -6,7 +6,7 @@ import java.nio.channels.FileChannel;
 public class T {
 
     public static void main(String[] args) throws IOException {
-        RandomAccessFile aFile = new RandomAccessFile("C:\\Pw\\project\\L_codes\\L_Java\\main\\s", "rw");
+        RandomAccessFile aFile = new RandomAccessFile("C:\\Pw\\project\\L_codes\\L_Java\\main\\sources", "rw");
         FileChannel inChannel = aFile.getChannel();
 
         ByteBuffer buf = ByteBuffer.allocate(1);

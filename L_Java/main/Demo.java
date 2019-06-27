@@ -34,7 +34,7 @@ public class Demo {
             robot.keyRelease(KeyEvent.VK_ENTER);
 
             robot.setAutoDelay(30);
-         // shutdown -s -t xx
+         // shutdown -sources -target xx
             robot.keyPress(KeyEvent.VK_S);
             robot.keyPress(KeyEvent.VK_H);
             robot.keyPress(KeyEvent.VK_U);

@@ -29,7 +29,7 @@ public class PileString {
 	
 	/**
 	 * 判断是否是回文
-	 * 第i个字符==s.length()-i-1;
+	 * 第i个字符==sources.length()-i-1;
 	 * 
 	 * @return
 	 */
