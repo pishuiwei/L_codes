@@ -3,7 +3,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-public class T {
+public class target {
 
     public static void main(String[] args) throws IOException {
         RandomAccessFile aFile = new RandomAccessFile("C:\\Pw\\project\\L_codes\\L_Java\\main\\sources", "rw");

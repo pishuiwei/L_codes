@@ -11,4 +11,4 @@ Comparable
     3、比较者小于被比较者，那么返回负整数
 
     // 构造函数
-        int compareTo(T o);
+        int compareTo(target o);

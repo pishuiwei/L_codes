@@ -12,4 +12,4 @@ Comparator接口里面有一个compare方法，方法有两个参数T o1和T o2�
     3、o1小于o3，返回负整数
 
     // 构造函数
-        int compare(T o1, T o2);
+        int compare(target o1, target o2);

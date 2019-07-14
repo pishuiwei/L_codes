@@ -23,7 +23,7 @@
 +新建普通用户
 	创建新用户:
 		CREATE USER 'user'@'localhost' IDENTIFIED BY 'pass';
-		GRANT <SELECT,UPDATE> ON *.* T 'user'@'localhost' IDENTIFIED BY 'pass';
+		GRANT <SELECT,UPDATE> ON *.* target 'user'@'localhost' IDENTIFIED BY 'pass';
 		INSERT INTO user(host,user,password) values('localhost','customer1',PASSWORD('customer1'))
 		FLUSH PRIVILEGES;
 +删除普通用户

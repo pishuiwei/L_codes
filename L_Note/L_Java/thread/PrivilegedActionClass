@@ -3,7 +3,7 @@
 抛出经过检查的异常的计算；抛出经过检查的异常的计算必须使用 PrivilegedExceptionAction。
 
 2、
-    T run()
+    target run()
     执行计算。此方法将在启动优先级后由 AccessController.doPrivileged 调用。
     返回：
     可以表示计算结果的与类有关的值。每个实现 PrivilegedAction 的类都应该记录是否此值表示某些内容及其表示的内容。

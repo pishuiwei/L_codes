@@ -37,7 +37,7 @@ ArrayBlockingQueue
   8、Object[] toArray()
         返回一个按适当顺序包含此队列中所有元素的数组。
 
-  9、<T> T[] toArray(T[] a)
+  9、<target> target[] toArray(target[] a)
         返回一个按适当顺序包含此队列中所有元素的数组；返回数组的运行时类型是指定数组的运行时类型。
 
 

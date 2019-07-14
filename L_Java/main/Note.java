@@ -26,8 +26,7 @@ public class Note {
                 }
                 i++;
             }
-
-            FileWriter fw = new FileWriter("C:\\Pw\\project\\L_codes\\L_Java\\main\\target");
+            FileWriter fw = new FileWriter("D:\\pw\\project\\L_codes\\L_Java\\main\\target");
             fw.write(sb.toString());
             fw.flush();
             fw.close();
