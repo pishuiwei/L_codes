@@ -14,11 +14,11 @@ public class Note {
             BufferedReader br = new BufferedReader(fileReader);
             String line;
             int i = 1;
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             sb.append("|选项|描述|\r\n");
             sb.append("|:----|:----|\r\n");
             while ((line = br.readLine()) != null) {
-                if (i%2 == 1) {
+                if (i%2 ==                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  1) {
                     sb.append("|").append(line);
                 }
                 if (i%2 == 0) {
