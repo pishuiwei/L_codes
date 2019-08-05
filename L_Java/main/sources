@@ -1,8 +1,0 @@
-.table-responsive-sm
-< 576px
-.table-responsive-md
-< 768px
-.table-responsive-lg
-< 992px
-.table-responsive-xl
-< 1200px
