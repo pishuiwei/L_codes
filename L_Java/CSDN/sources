@@ -1,13 +1,10 @@
-Java 类型	本地 C 类型	
-实际表示的 C 类型
-（Win32）
-说明
-boolean	jboolean	unsigned char	无符号，8 位
-byte	jbyte	signed char	有符号，8 位
-char	jchar	unsigned short	无符号，16 位
-short	jshort	short	有符号，16 位
-int	jint	long	有符号，32 位
-long	jlong	__int64	有符号，64 位
-float	jfloat	float	32 位
-double	jdouble	double	64 位
-void	void	N/A	N/A
+|:--|:--|
+
+
+|元素| 作用|
+|<queue> |创建一个队列|
+|<fanout-exchange> |创建一个fanout类型的Exchange|
+|<header-exchange>| 创建一个header类型的Exchange|
+|<topic-exchange> |创建一个topic类型的Exchange|
+|<direct-exchange>| 创建一个direct类型的Exchange|
+|<bindings><binding/><br></bindings> |元素定义一个或多个元素的集合。元素创建Exchange和队列之间的binding|
