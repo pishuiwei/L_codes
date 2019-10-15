@@ -1,10 +1,15 @@
 |:--|:--|
 
 
-|元素| 作用|
-|<queue> |创建一个队列|
-|<fanout-exchange> |创建一个fanout类型的Exchange|
-|<header-exchange>| 创建一个header类型的Exchange|
-|<topic-exchange> |创建一个topic类型的Exchange|
-|<direct-exchange>| 创建一个direct类型的Exchange|
-|<bindings><binding/><br></bindings> |元素定义一个或多个元素的集合。元素创建Exchange和队列之间的binding|
+|名称|  英语名称|作用|  例词
+|:--|:--|:--|:--|
+|名词|  Noun(n.)|表示人或事物的名称| student学生;China
+|代词|  Pronoun(pron.)|  用来代替名词，形容词，或数词等| He他；that那
+|数词|  Number(num.)||表示数量或顺序| One；first
+|形容词|Adjective(adj.)| 用来修饰名称|   safe安全；great伟大
+|冠词|  Article(art.)|   用在名词前，说明所指的人或事|   a，an，the
+|动词|  Verb(v.)|||表示人或事物的动作或状态|  eat吃；have有；run跑
+|副词|  Adverb(adv.)|用来修饰动词，形容词|   hard艰辛；here这
+|介词|  Preposition(prep.)  说明句子中词与词之间的关系| under在...下；in在...
+|连词|  Conjunction| 用来连接词，短语或句子| and和；but但是
+|感叹词|Interjection|表示说话时的感情或口气| Hello喂；why
